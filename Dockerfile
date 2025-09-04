@@ -21,6 +21,8 @@ COPY entrypoint.sh /app/entrypoint.sh
 # Make entrypoint executable inside the container
 RUN ["chmod", "+x", "/app/entrypoint.sh"]
 
+RUN ["python manage.py import_books"]
+
 # Use the entrypoint
 ENTRYPOINT ["/app/entrypoint.sh"]
 
