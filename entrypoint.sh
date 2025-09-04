@@ -11,5 +11,7 @@ python manage.py collectstatic --noinput
 echo "Applying database migrations..."
 python manage.py migrate
 
+python import_books.py
+
 # Run the main process (Gunicorn)
 exec "$@"
