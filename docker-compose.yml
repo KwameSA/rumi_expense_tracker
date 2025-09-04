@@ -1,6 +1,17 @@
 version: "3.8"
 
 services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: rumiexpress_user
+      POSTGRES_PASSWORD: KwameSANOSODO27
+      POSTGRES_DB: rumiexpress_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
   web:
     build: .
     command: gunicorn rumipress.wsgi:application --bind 0.0.0.0:8000
@@ -11,6 +22,9 @@ services:
       - static_volume:/app/staticfiles
     env_file:
       - .env
+    depends_on:
+      - db
 
 volumes:
   static_volume:
+  postgres_data:

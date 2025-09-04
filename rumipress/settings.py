@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 import dj_database_url
 from decouple import config
@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'rumiexpress_db',
         'USER': 'rumiexpress_user',
         'PASSWORD': 'KwameSANOSODO27',
-        'HOST': 'localhost',
+        'HOST': os.environ.get('DATABASE_HOST', 'db'), 
         'PORT': '5432',
     }
 }
