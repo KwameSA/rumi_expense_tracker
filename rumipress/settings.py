@@ -77,11 +77,11 @@ WSGI_APPLICATION = "rumipress.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rumiexpress_db',
-        'USER': 'rumiexpress_user',
-        'PASSWORD': 'KwameSANOSODO27',
-        'HOST': os.environ.get('DATABASE_HOST', 'db'), 
-        'PORT': '5432',
+        'NAME': os.environ.get('DATABASE_NAME', 'rumiexpress_db'),
+        'USER': os.environ.get('DATABASE_USER', 'rumiexpress_user'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', ''),
+        'HOST': os.environ.get('DATABASE_HOST', 'db'),
+        'PORT': os.environ.get('DATABASE_PORT', '5432'),
     }
 }
 
