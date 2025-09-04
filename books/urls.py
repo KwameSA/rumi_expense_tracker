@@ -1,16 +1,28 @@
 from django.urls import path
-from .views import *
+
+from . import views
 
 urlpatterns = [
+    # Home -> redirect to books list
+    path("", views.BookListView.as_view(), name="home"),
     # Category URLs
-    path('categories/', CategoryListView.as_view(), name='category_list'),
-    path('categories/add/', CategoryCreateView.as_view(), name='category_add'),
-    path('categories/<int:pk>/edit/', CategoryUpdateView.as_view(), name='category_edit'),
-    path('categories/<int:pk>/delete/', CategoryDeleteView.as_view(), name='category_delete'),
-
+    path("categories/", views.CategoryListView.as_view(), name="category_list"),
+    path("categories/add/", views.CategoryCreateView.as_view(), name="category_add"),
+    path(
+        "categories/<int:pk>/edit/",
+        views.CategoryUpdateView.as_view(),
+        name="category_edit",
+    ),
+    path(
+        "categories/<int:pk>/delete/",
+        views.CategoryDeleteView.as_view(),
+        name="category_delete",
+    ),
     # Book URLs
-    path('books/', BookListView.as_view(), name='book_list'),
-    path('books/add/', BookCreateView.as_view(), name='book_add'),
-    path('books/<int:pk>/edit/', BookUpdateView.as_view(), name='book_edit'),
-    path('books/<int:pk>/delete/', BookDeleteView.as_view(), name='book_delete')
+    path("books/", views.BookListView.as_view(), name="book_list"),
+    path("books/add/", views.BookCreateView.as_view(), name="book_add"),
+    path("books/<int:pk>/edit/", views.BookUpdateView.as_view(), name="book_edit"),
+    path("books/<int:pk>/delete/", views.BookDeleteView.as_view(), name="book_delete"),
+    path("reports/", views.reports, name="reports"),
+    path("reports/data/", views.get_chart_data, name='get_chart_data')
 ]

@@ -1,0 +1,20 @@
+{% extends "books/base.html" %} {% block content %}
+<div class="list-container">
+  <div class="side-by-side">
+    <h2 class="page-title">Categories</h2>
+    <a href="{% url 'category_add'%}" class="btn btn-success">Add Category</a>
+  </div>
+
+  <ul class="category-list down">
+    {% for cat in categories %}
+    <li class="category-item">
+      <span class="category-name">{{ cat.name }}</span>
+      <span class="category-actions">
+        <a href="{% url 'category_edit' cat.pk %}" class="btn btn-sm btn-primary">Edit</a>
+        <a href="{% url 'category_delete' cat.pk %}" class="btn btn-sm btn-danger">Delete</a>
+      </span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

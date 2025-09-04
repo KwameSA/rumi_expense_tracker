@@ -1,0 +1,94 @@
+{% extends "books/base.html" %} {% block content %}
+
+<div class="report-container">
+  <h2>
+    Select Insight:
+    <select id="reportSelector">
+      <option value="expense">Expenses by Category</option>
+      <option value="books_year">Books Added per Year</option>
+      <option value="books_category">Books per Category</option>
+      <option value="books_publisher">Books per Publisher</option>
+      <option value="best_authors">Top Ten Best Selling Authors</option>
+      <option value="books_trend">Books Published Per Year</option>
+      <option value="top_expense_titles">Top 10 Expensive Books</option>
+    </select>
+  </h2>
+
+  <div id="reportOutput">
+    <canvas id="reportChart" class="chart"></canvas>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  function randomColor() {
+    return `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`;
+  }
+
+  let reportChart;
+
+  function fetchChart(report) {
+    fetch("{% url 'get_chart_data' %}?report=" + report)
+      .then((response) => response.json())
+      .then((data) => {
+        const container = document.getElementById("reportOutput");
+        container.innerHTML = "";
+
+        if (data.chart_type === "list") {
+          const ul = document.createElement("ul");
+          ul.classList.add("report-list");
+          data.labels.forEach((label) => {
+            const li = document.createElement("li");
+            li.textContent = label;
+            ul.appendChild(li);
+          });
+          container.appendChild(ul);
+          return;
+        }
+
+        const canvas = document.createElement("canvas");
+        canvas.id = "reportChart";
+        container.appendChild(canvas);
+
+        const ctx = canvas.getContext("2d");
+        if (reportChart) {
+          reportChart.destroy();
+        }
+
+        const backgroundColors = data.labels.map(() => randomColor());
+
+        reportChart = new Chart(ctx, {
+          type: data.chart_type,
+          data: {
+            labels: data.labels,
+            datasets: [
+              {
+                label: report.replace("_", " ").toUpperCase(),
+                data: data.data,
+                backgroundColor: backgroundColors,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: { position: "top" },
+            },
+            scales: {
+              y: { beginAtZero: true },
+            },
+            indexAxis: report === "best_authors" ? "y" : "x",
+          },
+        });
+      });
+  }
+
+  fetchChart(document.getElementById("reportSelector").value);
+
+  document.getElementById("reportSelector").addEventListener("change", (e) => {
+    fetchChart(e.target.value);
+  });
+</script>
+
+{% endblock %}

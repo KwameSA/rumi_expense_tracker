@@ -1,0 +1,16 @@
+<div class="pagination">
+  <div>
+    {% if page_obj.has_previous %}
+    <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %} {% for num in page_obj.paginator.page_range %} {% if num >= page_obj.number|add:"-7" and num <= page_obj.number|add:"14" %} {% if num == page_obj.number %}
+    <strong>{{ num }}</strong>
+    {% else %}
+    <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ num }}">{{ num }}</a>
+    {% endif %} {% endif %} {% endfor %} {% if page_obj.has_next %}
+    <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page_obj.next_page_number }}">Next</a>
+    {% endif %}
+  </div>
+  <div class="down">
+    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+  </div>
+</div>

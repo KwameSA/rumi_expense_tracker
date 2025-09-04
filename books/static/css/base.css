@@ -1,0 +1,367 @@
+/* ====== Base Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  background-color: #f9fafb;
+  color: #333;
+}
+
+/* ====== Header & Navigation ====== */
+header {
+  background: #2c3e50;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #1abc9c;
+}
+
+/* ====== Container / Main Layout ====== */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* ====== Headings ====== */
+h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* ====== Buttons ====== */
+.btn {
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+  font-size: 15px;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #3995f7;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: #f55f6e;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: #fff;
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background: #8d8d8d;
+}
+
+.btn-success {
+  background: #28a745;
+  color: #fff;
+  height: 40px;
+}
+
+.btn-success:hover {
+  background: #30c352;
+}
+
+.btn-sm {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+}
+
+/* ====== Forms ====== */
+.form-container {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.form-container form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 500;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1abc9c;
+  box-shadow: 0 0 0 2px rgba(26, 188, 156, 0.2);
+}
+
+/* ====== Lists ====== */
+.category-list {
+  list-style: none;
+  padding: 0;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.category-item a {
+  margin-left: 0.5rem;
+}
+
+/* ====== Tables ====== */
+.list-container {
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+.list-container table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.list-container th,
+.list-container td {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.list-container th {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+.list-container tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* ====== Pagination ====== */
+.pagination {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.pagination a,
+.pagination strong {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.pagination a {
+  background: #ffffff;
+  color: #000000;
+}
+
+.pagination a:hover {
+  background: #1abc9c;
+  color: #ffffff;
+}
+
+.pagination strong {
+  background: #1abc9c;
+  color: #fff;
+}
+
+/* ====== Delete Confirm ====== */
+.delete-container {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* ====== Charts / Reports ====== */
+.report-container {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.chart {
+  margin: 1rem auto;
+  width: 100%;
+  height: 800px;
+}
+
+.report-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.report-list li {
+  padding: 0.5rem 1rem;
+  margin-left: 20px;
+  margin-bottom: 0.5rem;
+  background: #f8f9fa;
+  border-left: 4px solid;
+  border-image: linear-gradient(to bottom, #007bff, #00c6ff) 1;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* ====== Links ====== */
+a {
+  color: #fbfbfb;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fbfbfb;
+}
+
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.book-card {
+  flex: 1 1 calc(35% - 1.5rem); /* 4 cards per row */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-card h3 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.book-card .subtitle {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.book-card p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.book-card .actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 10rem;
+  justify-content: flex-start;
+}
+
+.down {
+  margin-top: 20px;
+}
+
+.side-by-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.search-form input {
+  width: 450px;
+}
+
+.delete-warning {
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.btn-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .book-card {
+    flex: 1 1 calc(33.33% - 1rem);
+  }
+}
+@media (max-width: 900px) {
+  .book-card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+@media (max-width: 600px) {
+  .book-card {
+    flex: 1 1 100%;
+  }
+}

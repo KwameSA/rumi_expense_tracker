@@ -1,0 +1,6 @@
+Django>=5.0
+gunicorn
+psycopg2-binary  # needed for Postgres
+dj-database-url  # helps parse DATABASE_URL
+python-decouple  # manage secrets/env vars
+whitenoise==6.9.0
