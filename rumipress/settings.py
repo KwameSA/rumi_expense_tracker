@@ -75,9 +75,14 @@ WSGI_APPLICATION = "rumipress.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL', default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'rumiexpress_db',
+        'USER': 'rumiexpress_user',
+        'PASSWORD': 'KwameSANOSODO27',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 

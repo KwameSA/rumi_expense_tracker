@@ -1,3 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.egg-info/
+*.egg
+*.log
+
+# Virtual environment
 venv/
-project.bat
+env/
+ENV/
+
+# Django
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+/staticfiles/
+media/
+
+# VSCode / IDEs
+.vscode/
+.idea/
+
+# Environment variables
 .env

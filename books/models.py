@@ -12,10 +12,10 @@ class BookCategory(models.Model):
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=200)
-    subtitle = models.CharField(max_length=200)
-    authors = models.CharField(max_length=200)
-    publisher = models.CharField(max_length=200)
+    title = models.CharField(max_length=500)
+    subtitle = models.CharField(max_length=500, blank=True, null=True)
+    authors = models.CharField(max_length=1000)
+    publisher = models.CharField(max_length=500)
     published_date = models.DateField()
     category = models.ForeignKey(BookCategory, on_delete=models.CASCADE)
     distribution_expense = models.DecimalField(max_digits=10, decimal_places=2)
