@@ -25,4 +25,4 @@ RUN ["chmod", "+x", "/app/entrypoint.sh"]
 ENTRYPOINT ["/app/entrypoint.sh"]
 
 # Default command to run Django
-CMD ["gunicorn", "books_project.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "rumipress.wsgi:application", "--bind", "0.0.0.0:8000"]
