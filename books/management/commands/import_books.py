@@ -8,7 +8,7 @@ class Command(BaseCommand):
     help = "Import books distribution expenses from Excel spreadsheet"
 
     def handle(self, *args, **kwargs):
-        df = pd.read_excel("data/books_distribution_expenses.xlsx")
+        df = pd.read_excel("books/data/books_distribution_expenses.xlsx")
 
         print("Long authors:")
         print(df[df['authors'].str.len() > 200])
