@@ -95,6 +95,9 @@ Open http://localhost:8000 in your browser.
 ## Screenshots
 - [Visit Portfolio](https://kwamesa.github.io/portfolio/index.html)
 ---
+## License
+- This project is licensed under the MIT License. See the [LICENSE]() file for details.
+---
 ## Links
 - Live App: [Rumi Expense Tracker](https://rumiexpensetracker-production.up.railway.app/books/)
 
