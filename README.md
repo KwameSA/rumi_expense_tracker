@@ -92,7 +92,8 @@ Usage
 
 - Use CRUD operations to add, edit, or delete entries
 ---
-Screenshots - [Visit Portfolio](https://kwamesa.github.io/portfolio/index.html)
+Screenshots
+- [Visit Portfolio](https://kwamesa.github.io/portfolio/index.html)
 ---
 Links
 - Live App: [Rumi Expense Tracker](https://rumiexpensetracker-production.up.railway.app/books/)
