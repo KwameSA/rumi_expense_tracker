@@ -17,7 +17,7 @@ A Django web application for managing personal finances and book inventory. User
 
 ---
 
-## Features
+## Features(#features)
 
 - Track expenses: create, update, and delete transactions  
 - Manage books: full CRUD for book inventory  
