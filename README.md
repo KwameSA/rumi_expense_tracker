@@ -17,7 +17,7 @@ A Django web application for managing personal finances and book inventory. User
 
 ---
 
-## Features(#features)
+## Features
 
 - Track expenses: create, update, and delete transactions  
 - Manage books: full CRUD for book inventory  
@@ -85,16 +85,16 @@ manage.py collectstatic
 Open http://localhost:8000 in your browser.
 ```
 ---
-Usage
+## Usage
 - Navigate to /books/ to manage book inventory
 
 - Navigate to /reports/ to gain insights on what
 
 - Use CRUD operations to add, edit, or delete entries
 ---
-Screenshots
+## Screenshots
 - [Visit Portfolio](https://kwamesa.github.io/portfolio/index.html)
 ---
-Links
+## Links
 - Live App: [Rumi Expense Tracker](https://rumiexpensetracker-production.up.railway.app/books/)
 
